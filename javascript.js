@@ -1,5 +1,9 @@
 const validChoices = ["rock", "paper", "scissors"];
 
+let win = 0;
+let loss = 0;
+let tie = 0;
+
 let rps = (choice) => {
 
     if (!validChoices.includes(choice)) {
@@ -8,10 +12,6 @@ let rps = (choice) => {
     }
 
     let computerChoice = validChoices[Math.floor(Math.random() * validChoices.length)];
-
-    let win = 0;
-    let loss = 0;
-    let tie = 0;
 
     if (choice === computerChoice) {
         tie++;
