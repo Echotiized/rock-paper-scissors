@@ -20,7 +20,8 @@ let rps = () => {
 
     if (!validChoices.includes(choice)) {
         console.log(`${choice} is an invalid selection. Please choose between rock, paper, or scissors.`);
-    return;
+    i--;
+    continue;
     }
 
     let computerChoice = validChoices[Math.floor(Math.random() * validChoices.length)];
@@ -31,7 +32,7 @@ let rps = () => {
         \nGames Won: ${win}
         \nGames Lost: ${loss}
         \nGames Tied: ${tie}`);
-    return;
+        continue;
     }
 
     if (choice === "rock" && computerChoice === "scissors"
@@ -43,7 +44,7 @@ let rps = () => {
         \nGames Won: ${win}
         \nGames Lost: ${loss}
         \nGames Tied: ${tie}`);
-        return;
+        continue;
     }
 
      if (choice === "rock" && computerChoice === "paper"
@@ -55,7 +56,6 @@ let rps = () => {
         \nGames Won: ${win}
         \nGames Lost: ${loss}
         \nGames Tied: ${tie}`);
-        return;
     }
 }
 }   
