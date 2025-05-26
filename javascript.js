@@ -9,8 +9,16 @@ let rps = (choice) => {
 
     let computerChoice = validChoices[Math.floor(Math.random() * validChoices.length)];
 
+    let win = 0;
+    let loss = 0;
+    let tie = 0;
+
     if (choice === computerChoice) {
-        console.log(`It's a tie! You chose ${choice} and the computer chose ${computerChoice}.`);
+        tie++;
+        console.log(`It's a tie! You chose ${choice} and the computer chose ${computerChoice}.
+        \nGames Won: ${win}
+        \nGames Lost: ${loss}
+        \nGames Tied: ${tie}`);
     return;
     }
 
@@ -18,7 +26,11 @@ let rps = (choice) => {
         || choice === "scissors" && computerChoice === "paper"
         || choice === "paper" && computerChoice === "rock"
     ) {
-        console.log(`You won! You chose ${choice} and the computer chose ${computerChoice}.`);
+        win++;
+        console.log(`You won! You chose ${choice} and the computer chose ${computerChoice}.
+        \nGames Won: ${win}
+        \nGames Lost: ${loss}
+        \nGames Tied: ${tie}`);
         return;
     }
 
@@ -26,7 +38,11 @@ let rps = (choice) => {
         || choice === "scissors" && computerChoice === "rock"
         || choice === "paper" && computerChoice === "scissors"
     ) {
-        console.log(`You lost! You chose ${choice} and the computer chose ${computerChoice}.`);
+        loss++;
+        console.log(`You lost! You chose ${choice} and the computer chose ${computerChoice}.
+        \nGames Won: ${win}
+        \nGames Lost: ${loss}
+        \nGames Tied: ${tie}`);
         return;
     }
 }   
